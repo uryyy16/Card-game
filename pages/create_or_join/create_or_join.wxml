@@ -1,0 +1,11 @@
+<button bindtap="createRoom">test</button>
+
+<view class="header">
+  <image src="/image/background/creat_or_join.jpg"></image>
+</view>
+<view class="choice">
+  <view class="creat">
+  </view>
+  <view class="join">
+  </view>
+</view>

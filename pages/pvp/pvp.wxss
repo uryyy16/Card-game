@@ -1,0 +1,165 @@
+/* pages/pvp/pvp.wxss */
+.header image{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+}
+
+.card{
+    display: flex;
+    width: 300rpx;
+    height: 110rpx;
+    margin-top: 20rpx;
+    margin-left: 210rpx;
+}
+
+.card .card_pool{
+    width: 60rpx;
+    height: 100rpx;
+    border: 1rpx solid #000;
+}
+
+.card .top_card{
+    width: 60rpx;
+    height: 100rpx;
+    border: 1rpx solid #000;
+    margin-left: 200rpx;
+}
+
+.player{
+    display: flex;
+    width: 600rpx;
+    height: 190rpx;
+    border: 1rpx solid #000;
+    margin-top: 25rpx;
+    margin-left: 75rpx;
+}
+
+.player .player_1{
+    width: 170rpx;
+    height: 190rpx;
+    border: 1rpx solid #000;
+    margin-left: 10rpx;
+}
+
+.player .player_1 .poke{
+    width: 170rpx;
+    height: 130rpx;
+    border: 1rpx solid pink;
+    display: flex;
+}
+
+.player .player_1 .poke .spade{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+}
+
+.player .player_1 .poke .heart{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+    margin-left: 30rpx;
+}
+
+.player .player_1 .poke .club{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+}
+
+.player .player_1 .poke .diamond{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+    margin-left: 30rpx;
+}
+
+.player .player_1 .info{
+    width: 170rpx;
+    height: 40rpx;
+    border: 1rpx solid red;
+    margin-top: 5rpx;
+    display: flex;
+}
+
+.player .player_1 .info .photo{
+    width: 40rpx;
+    height: 40rpx;
+    border: 1rpx solid blue;
+    margin-left: 40rpx;
+}
+
+.player .player_1 .info .robort{
+    width: 20rpx;
+    height: 20rpx;
+    border: 1rpx solid blue;
+    margin-left: 30rpx;
+    margin-top: 10rpx;
+}
+
+.player .player_2{
+    width: 170rpx;
+    height: 190rpx;
+    border: 1rpx solid #000;
+    margin-left: 240rpx;
+}
+
+.player .player_2 .poke{
+    width: 170rpx;
+    height: 130rpx;
+    border: 1rpx solid pink;
+    display: flex;
+}
+
+.player .player_2 .info{
+    width: 170rpx;
+    height: 40rpx;
+    border: 1rpx solid red;
+    margin-top: 10rpx;
+    display: flex;
+}
+
+.player .player_2 .poke .spade{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+}
+
+.player .player_2 .poke .heart{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+    margin-left: 30rpx;
+}
+
+.player .player_2 .poke .club{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+}
+
+.player .player_2 .poke .diamond{
+    width: 50rpx;
+    height: 60rpx;
+    border: 1rpx solid green;
+    margin-left: 30rpx;
+}
+
+.player .player_2 .info .photo{
+    width: 40rpx;
+    height: 40rpx;
+    border: 1rpx solid blue;
+    margin-left: 40rpx;
+}
+
+.player .player_2 .info .robort{
+    width: 20rpx;
+    height: 20rpx;
+    border: 1rpx solid blue;
+    margin-left: 30rpx;
+    margin-top: 10rpx;
+}

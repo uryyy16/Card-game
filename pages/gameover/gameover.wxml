@@ -1,0 +1,8 @@
+<!--pages/gameover/gameover.wxml-->
+<view class="header">
+  <image src="/image/background/score.jpg"></image>
+  <view class="result">
+    <text>{{result}}</text>
+  </view>
+</view>
+

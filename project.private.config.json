@@ -1,0 +1,48 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/mode/mode",
+          "pathName": "pages/mode/mode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "create_or_join",
+          "pathName": "pages/create_or_join/create_or_join",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pvp/pvp",
+          "pathName": "pages/pvp/pvp",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/join/join",
+          "pathName": "pages/join/join",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/gameover/gameover",
+          "pathName": "pages/gameover/gameover",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

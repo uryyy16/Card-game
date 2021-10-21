@@ -1,0 +1,7 @@
+<view class="header">
+    <image src="/image/background/invit.jpg"></image>
+    <view class="info">
+        <input type="text" auto-focus placeholder="  请输入邀请码：" class = "content"  bindinput="inputInfo"/>
+       <view class="btn" bindtap="bindbtn">确定</view>
+    </view>
+</view>

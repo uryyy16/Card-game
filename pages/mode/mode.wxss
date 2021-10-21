@@ -1,0 +1,37 @@
+/**index.wxss**/
+.header image{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+}
+
+.choice {
+    display: flex;
+}
+
+.choice .mode1{
+    margin-top: 105rpx;
+    margin-left: 70rpx;
+    width: 180rpx;
+    height: 120rpx;
+    border: 4rpx solid #000; 
+}
+
+.choice .mode2{
+    margin-top: 230rpx;
+    margin-left: 50rpx;
+    width: 180rpx;
+    height: 120rpx;
+    border: 4rpx solid #000; 
+}
+
+.choice .mode3{
+    margin-top: 105rpx;
+    margin-left: 50rpx;
+    width: 180rpx;
+    height: 120rpx;
+    border: 4rpx solid #000; 
+}

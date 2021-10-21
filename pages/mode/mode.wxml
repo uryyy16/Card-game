@@ -1,0 +1,11 @@
+<view class="header">
+  <image src="/image/background/mode.jpg"></image>
+</view>
+<view class="choice">
+  <navigator class="mode1" url="/pages/pvp/pvp">
+  </navigator>
+  <navigator class="mode2" url="/pages/create_or_join/create_or_join">
+  </navigator>
+  <navigator class="mode3" url="/pages//pvp/pvp">
+  </navigator>
+</view>

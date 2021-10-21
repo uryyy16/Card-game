@@ -1,0 +1,9 @@
+<view class="header">
+  <image src="/image/background/login.jpg"></image>
+</view>
+
+<view class="information">
+  <input class="inputID" bindinput="inputName" placeholder="  账号"></input>
+  <input class="inputPWD" password bindinput="inputPWD" placeholder="  密码"></input>
+  <view class="login" bindtap="login" style="color: #666;">确定登录</view>
+</view>

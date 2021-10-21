@@ -1,0 +1,13 @@
+/* pages/create_or_join/create_or_join.wxss *//**index.wxss**/
+.header image{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+}
+
+.choice {
+    display: flex;
+}
