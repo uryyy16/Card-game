@@ -1,26 +1,27 @@
 /* pages/gameover/gameover.wxss */
 /**index.wxss**/
 .header image{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -999;
-}
-
-.result{
-  /* margin-top: 150rpx; */
-  /* margin-left: 150rpx; */
-  margin: 180rpx auto;
-  height: 80rpx;
-  width: 410rpx;
-  color:rgb(90, 134, 195);
-  font-size: 75rpx;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align:center;
-  align-items:center;
-  justify-content: center;
-  font-weight: bolder;
-  /* background-color: black; */
-}
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+  }
+  
+  .result{
+    /* margin-top: 150rpx; */
+    /* margin-left: 150rpx; */
+    margin: 180rpx auto;
+    height: 80rpx;
+    width: 410rpx;
+    color:rgb(90, 134, 195);
+    font-size: 75rpx;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+    align-items:center;
+    justify-content: center;
+    font-weight: bolder;
+    /* background-color: black; */
+  }
+  

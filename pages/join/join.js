@@ -1,4 +1,5 @@
 // pages/join/join.js
+const app = getApp()
 Page({
 
   /**
@@ -11,6 +12,8 @@ Page({
   
   inputInfo:function(e){
     this.data.invite_code = e.detail.value;
+    app.globalData.uuid = this.data.invite_code
+    wx.setStorageSync('uuid', this.data.invite_code)
   },
   //将token和邀请码作为参数发送给服务器，成功则到在线游戏界面，否则输出提示信息
   bindbtn:function(e){

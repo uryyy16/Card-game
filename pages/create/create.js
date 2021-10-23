@@ -33,7 +33,7 @@ joingame(){
         app.globalData.uuid = res.data.data.uuid
         wx.setStorageSync('uuid', res.data.data.uuid)
         wx.showToast({
-          title: '邀请码已成功复制',
+          //title: '邀请码已成功复制',
         })
         wx.setClipboardData({
           data: res.data.data.uuid,

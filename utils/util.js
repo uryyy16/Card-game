@@ -61,3 +61,8 @@ function observe(obj, key, watchFun, deep, page) {
     }
   })
 }
+
+module.exports = {
+  formatTime,
+  setWatcher: setWatcher
+}

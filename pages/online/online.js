@@ -171,7 +171,8 @@ Page({
             ch_current_player: '二'
         })
     }  
-    this.judge_game_over()
+    if (current_player == 1)  this.data.done = true
+    //this.judge_game_over()
   },
 
   //告知服务器抽取卡组操作
@@ -521,6 +522,42 @@ Page({
         })
     }  
   },
+ //结束时获取对局信息
+ get_info:function(){
+    var that = this
+    wx.request({
+        url: 'http://172.17.173.97:9000/api/game/' + app.globalData.uuid ,
+        method: "GET",
+        header: {
+            "Authorization": wx.getStorageSync('token')
+        },
+        data: {
+        },
+        success: res => {
+            console.log(res)
+            app.globalData.winner = res.data.data.winner
+            wx.setStorageSync('winner', res.data.data.winner)
+            var info = res.data.data.last
+            console.log('拿到对方的操作为：' + info)
+            if (info.length != 0){
+                current_player = 1
+                tmp_ty = info[4]
+                tmp_num = info[5]
+                var op_ty = info[2]
+                console.log("拿到对方操作")
+                console.log(op_ty)
+                console.log(tmp_ty)
+                console.log(tmp_num)
+                if (info.length == 7)  tmp_num += info[6]
+                if (op_ty == '0')  that.take_from_outside()
+                else  that.take_from_inside(1)
+            }
+        }
+    })
+    wx.navigateTo({
+        url: '/pages/gameover/gameover',
+    })
+ },
 
   //获取上步操作
   get_last: function(){
@@ -542,7 +579,8 @@ Page({
                 console.log(res)
                 if(res.data.code == 400){
                     clearInterval(that.data.interval)
-                    that.judge_winner()
+                    that.get_info()
+                    //that.judge_winner()
                 }
                 if(res.data.data.your_turn == true){
                     current_player = 0
@@ -590,4 +628,8 @@ Page({
     watch.setWatcher(this)
     this.get_last()
   },
+
+  onHide: function(options){
+    clearInterval(this.data.interval)
+  }
 }) 
