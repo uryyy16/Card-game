@@ -4,9 +4,12 @@
     "pages/logs/logs",
     "pages/mode/mode",
     "pages/create_or_join/create_or_join",
-    "pages/pvp/pvp",
     "pages/join/join",
-    "pages/gameover/gameover"
+    "pages/gameover/gameover",
+    "pages/create/create",
+    "pages/local_1/local_1",
+    "pages/local_2/local_2",
+    "pages/online/online"
   ],
   "window":{
     "backgroundTextStyle":"light",

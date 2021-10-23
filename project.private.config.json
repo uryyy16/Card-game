@@ -1,48 +1,90 @@
 {
-  "setting": {},
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/mode/mode",
-          "pathName": "pages/mode/mode",
-          "query": "",
-          "scene": null
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
         },
-        {
-          "name": "create_or_join",
-          "pathName": "pages/create_or_join/create_or_join",
-          "query": "",
-          "scene": null
+        "game": {
+            "list": []
         },
-        {
-          "name": "pages/pvp/pvp",
-          "pathName": "pages/pvp/pvp",
-          "query": "",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "name": "pages/join/join",
-          "pathName": "pages/join/join",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/gameover/gameover",
-          "pathName": "pages/gameover/gameover",
-          "query": "",
-          "scene": null
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/mode/mode",
+                    "pathName": "pages/mode/mode",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "create_or_join",
+                    "pathName": "pages/create_or_join/create_or_join",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/pvp/pvp",
+                    "pathName": "pages/pvp/pvp",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/join/join",
+                    "pathName": "pages/join/join",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/create_or_join/create_or_join",
+                    "pathName": "pages/create_or_join/create_or_join",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/create/create",
+                    "pathName": "pages/create/create",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/pvp/pvp",
+                    "pathName": "pages/pvp/pvp",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/local_1/local_1",
+                    "pathName": "pages/local_1/local_1",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/local_2/local_2",
+                    "pathName": "pages/local_2/local_2",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/online/online",
+                    "pathName": "pages/online/online",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/gameover/gameover",
+                    "pathName": "pages/gameover/gameover",
+                    "query": "",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

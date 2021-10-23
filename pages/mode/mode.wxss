@@ -9,29 +9,53 @@
 }
 
 .choice {
-    display: flex;
+    margin-top: 230rpx;
+    margin-left: 155rpx;
 }
 
 .choice .mode1{
-    margin-top: 105rpx;
-    margin-left: 70rpx;
-    width: 180rpx;
-    height: 120rpx;
-    border: 4rpx solid #000; 
+    opacity: 0.7;
+    height: 150rpx;
+    width: 450rpx;
+    border-radius: 50rpx;
+    align-items: center;
+    background-color: #ffffff;
+    font-size: 55rpx;
+    font-family: "幼圆";
+    letter-spacing: 6rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .choice .mode2{
-    margin-top: 230rpx;
-    margin-left: 50rpx;
-    width: 180rpx;
-    height: 120rpx;
-    border: 4rpx solid #000; 
+    opacity: 0.7;
+    height: 150rpx;
+    width: 450rpx;
+    border-radius: 50rpx;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 100rpx;
+    font-size: 55rpx;
+    font-family: "幼圆";
+    letter-spacing: 6rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .choice .mode3{
-    margin-top: 105rpx;
-    margin-left: 50rpx;
-    width: 180rpx;
-    height: 120rpx;
-    border: 4rpx solid #000; 
+    opacity: 0.7;
+    height: 150rpx;
+    width: 450rpx;
+    border-radius: 50rpx;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 100rpx;
+    font-size: 55rpx;
+    font-family: "幼圆";
+    letter-spacing: 6rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

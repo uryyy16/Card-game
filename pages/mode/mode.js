@@ -1,66 +1,30 @@
 // pages/mode/mode.js
+const app = getApp()
 Page({
-
-    /**
-     * 页面的初始数据
-     */
-    data: {
-
+    //选择人人对战
+    choose_1() {
+        app.globalData.mode = 1
+        wx.setStorageSync('mode', 1)
+        wx.navigateTo({
+          url: '/pages/local_1/local_1'
+        }) 
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
+    //选择在线对战
+    choose_2() {
+        app.globalData.mode = 2
+        wx.setStorageSync('mode', 2)
+        wx.navigateTo({
+          url: '/pages/create_or_join/create_or_join'
+        }) 
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    //选择人机对战
+    choose_3() {
+        app.globalData.mode = 3
+        wx.setStorageSync('mode', 3)
+        wx.navigateTo({
+          url: '/pages/local_2/local_2'
+        }) 
     }
 })

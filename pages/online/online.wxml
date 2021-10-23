@@ -1,0 +1,84 @@
+<view class="header">
+  <image src="/image/background/play.jpg"></image>
+</view>
+
+<view class="card">
+  <view class="left_poke" bindtap="get_poke" id="t_get_poke">
+    <image src="/image/poke/back.jpg" mode="widthFix"></image>
+    <view class="left_num" style="color: white;">{{left_tot}}</view>
+  </view> 
+  <view class="turn">{{msg}}</view>
+  <view class="poke_pool">
+    <image src="{{top_poke_url}}" mode="widthFix"></image>
+    <view class="pool_num" style="color: white;">{{pool_tot}}</view>
+  </view> 
+</view>
+
+<view class="player">
+  <view class="player_1">
+    <view class="poke">
+      <view class="line_1">
+        <view class="spade" bindtap="player0_S">
+          <image src="/image/poke/spade.jpg" mode="widthFix"></image>
+          <view class="spade_num" style="color: white;">{{player_0_spade}}</view> 
+        </view>
+        <view class="heart" bindtap="player0_H">
+          <image src="/image/poke/heart.jpg" mode="widthFix"></image>
+          <view class="heart_num" style="color: white;">{{player_0_heart}}</view> 
+        </view>
+      </view>
+      <view class="line_2">
+        <view class="club" bindtap="player0_C">
+          <image src="/image/poke/club.jpg" mode="widthFix"></image>
+          <view class="club_num" style="color: white;">{{player_0_club}}</view> 
+        </view>
+        <view class="diamond" bindtap="player0_D">
+          <image src="/image/poke/diamond.jpg" mode="widthFix"></image>
+          <view class="diamond_num" style="color: white;">{{player_0_diamond}}</view> 
+        </view>
+      </view>
+    </view>
+    <view class="info">
+      <view class="photo">
+        <image src="/image/icon/user.jpg" mode="widthFix"></image>
+      </view>
+      <view class="robort" bindtap="change_robot_0">
+        <image src="{{robort_url_0}}" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <view class="player_2">
+    <view class="poke">
+      <view class="line_1">
+        <view class="spade" bindtap="player1_S">
+          <image src="/image/poke/spade.jpg" mode="widthFix"></image>
+          <view class="spade_num" style="color: white;">{{player_1_spade}}</view> 
+        </view>
+        <view class="heart" bindtap="player1_H">
+          <image src="/image/poke/heart.jpg" mode="widthFix"></image>
+          <view class="heart_num" style="color: white;">{{player_1_heart}}</view> 
+        </view>
+      </view>
+      <view class="line_2">
+        <view class="club" bindtap="player1_C">
+          <image src="/image/poke/club.jpg" mode="widthFix"></image>
+          <view class="club_num" style="color: white;">{{player_1_club}}</view> 
+        </view>
+        <view class="diamond" bindtap="player1_D">
+          <image src="/image/poke/diamond.jpg" mode="widthFix"></image>
+          <view class="diamond_num" style="color: white;">{{player_1_diamond}}</view> 
+        </view>
+      </view>
+    </view>
+    <view class="info">
+      <view class="photo">
+        <image src="/image/icon/user.jpg" mode="widthFix"></image>
+      </view>
+      <!-- <view class="robort" bindtap="change_robot_1">
+        <image src="{{robort_url_1}}" mode="widthFix"></image>
+      </view> -->
+    </view>
+  </view>
+</view>
+  
+

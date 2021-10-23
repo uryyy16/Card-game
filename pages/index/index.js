@@ -6,7 +6,7 @@ Page({
    */
   data: {
     student_id:"",
-    password:""
+    password:"",
   },
 
   /**
@@ -18,7 +18,7 @@ Page({
 
   inputName: function(e){
     this.data.student_id = e.detail.value;
-    console.log(this.data.name)
+    console.log(this.data.student_id)
   },
 
   inputPWD: function(e){
@@ -26,6 +26,7 @@ Page({
   },
 
   login: function(e){
+    console.log("正在发送请求！")
     wx.request({
       url: 'http://172.17.173.97:8080/api/user/login',
       method: "POST",

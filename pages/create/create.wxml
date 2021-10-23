@@ -1,0 +1,7 @@
+<view class="header">
+    <image src="/image/background/invit.jpg"></image>
+    <view class="info">
+        <view class = "content">您的邀请码为：{{contents}} </view>
+        <view  class = "start" bindtap='joingame' data-text="{{contents}}">  开始游戏</view>
+    </view>
+</view>

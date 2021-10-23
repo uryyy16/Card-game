@@ -8,6 +8,34 @@
     z-index: -999;
 }
 
-.choice {
+.choice .creat{
+    width: 400rpx;
+    height: 120rpx;
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 20rpx;
+    margin-top: 190rpx;
+    margin-left: 173rpx;
+    font-size: 45rpx;
+    font-family: "幼圆";
+    letter-spacing: 6rpx;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choice .join{
+    width: 400rpx;
+    height: 120rpx;
+    background-color:rgb(174, 191, 207);
+    opacity: 0.7;
+    border-radius: 20rpx;
+    margin-top: 530rpx;
+    margin-left: 173rpx;
+    font-size: 45rpx;
+    font-family: "幼圆";
+    letter-spacing: 6rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
