@@ -1,4 +1,5 @@
 // pages/create_or_join/create_or_join.js
+const app = getApp()
 Page({
 
     /**
@@ -15,22 +16,14 @@ Page({
 
     },
     createRoom() {
-        // console.log(wx.getStorageSync('token'))
-        wx.request({
-          url: 'http://172.17.173.97:9000/api/game',
-          method: "POST",
-          header: {
-            "Authorization": wx.getStorageSync('token')
-          },
-          data: {
-            private: true
-          },
-          success: res => {
-            wx.navigateTo({
-              url: '/pages/join/join'
-            })         
-              console.log(res)
-          }
-        })
+        wx.navigateTo({
+          url: '/pages/create/create'
+        }) 
+    },
+
+    joinRoom() {
+      wx.navigateTo({
+        url: '/pages/join/join'
+      }) 
     }
 })

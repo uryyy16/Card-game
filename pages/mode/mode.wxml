@@ -2,10 +2,7 @@
   <image src="/image/background/mode.jpg"></image>
 </view>
 <view class="choice">
-  <navigator class="mode1" url="/pages/pvp/pvp">
-  </navigator>
-  <navigator class="mode2" url="/pages/create_or_join/create_or_join">
-  </navigator>
-  <navigator class="mode3" url="/pages//pvp/pvp">
-  </navigator>
+  <view class="mode1" bindtap="choose_1">人人对战</view>
+  <view class="mode2" bindtap="choose_2">在线对战</view>
+  <view class="mode3" bindtap="choose_3">人机对战</view>
 </view>

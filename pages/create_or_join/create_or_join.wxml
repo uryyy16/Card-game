@@ -1,11 +1,11 @@
-<button bindtap="createRoom">test</button>
+
 
 <view class="header">
   <image src="/image/background/creat_or_join.jpg"></image>
 </view>
 <view class="choice">
-  <view class="creat">
+  <view class="creat" bindtap="createRoom">创建房间
   </view>
-  <view class="join">
+  <view class="join" bindtap="joinRoom">加入房间
   </view>
 </view>
