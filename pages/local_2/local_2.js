@@ -417,8 +417,8 @@ Page({
   },
 
   onLoad: function (options) {
-    app.globalData.owner = 1
-    wx.setStorageSync('owner', 1)  
+    app.globalData.owner = 0
+    wx.setStorageSync('owner', 0)  
     this.init()
    },
 }) 

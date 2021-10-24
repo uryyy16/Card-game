@@ -370,8 +370,8 @@ Page({
 
   onLoad: function (options) {
     current_player = 0
-    app.globalData.owner = 1
-    wx.setStorageSync('owner', 1)
+    app.globalData.owner = 0
+    wx.setStorageSync('owner', 0)
     this.init()
    },
 }) 

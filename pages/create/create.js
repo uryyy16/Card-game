@@ -9,8 +9,8 @@ Page({
     'contents':''
   },
 joingame(){
-  app.globalData.owner = 1
-  wx.setStorageSync('owner', 1)
+  app.globalData.owner = 0
+  wx.setStorageSync('owner', 0)
   wx.navigateTo({
     url: '/pages/online/online',
   })

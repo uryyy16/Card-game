@@ -357,8 +357,10 @@ Page({
             console.log('红心：' + that.data.player_0_heart)
             console.log('梅花：' + that.data.player_0_club)
             console.log('方块：' + that.data.player_0_diamond)
-            var maxi = -1, maxn = -1
+            var maxi = -1, maxn = 0
             for(var i = 0; i < 4; i ++){
+                if(i == top_poke)
+                    continue
                 if(tmp[i] > maxn){
                     maxn = tmp[i]
                     maxi = i
@@ -607,8 +609,8 @@ Page({
             }
         })
     },1000)
-    this.get_info()
     console.log('退出循环')
+    this.get_info()
     //记录玩家1的操作
     current_player = 0;
     if (deposit_0 == 1)  this.AI_robot()
@@ -621,5 +623,9 @@ Page({
 
   onHide: function(options) {
       clearInterval(this.data.interval)
+  },
+
+  onUnload:function(){
+    clearInterval(this.data.interval);
   }
 }) 
