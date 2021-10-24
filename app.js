@@ -18,6 +18,7 @@ App({
     token: wx.getStorageSync('token'), // 从缓存中获取 token
     winner: 0,  //记录赢家
     mode: 0,  //记录选择的游戏模式
-    uuid: wx.getStorageSync('uuid')
+    uuid: wx.getStorageSync('uuid'),
+    owner: 1
   }
 })

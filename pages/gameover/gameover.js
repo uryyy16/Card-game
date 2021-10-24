@@ -13,7 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var tmp = app.globalData.winner
+    var tmp = app.globalData.winner ^ app.globalData.owner
+    console.log('赢家： ' + tmp)
     if(tmp == 1){
       this.setData({
         result : 'The Second Player Win!'
@@ -42,7 +43,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var tmp = app.globalData.winner
+    var tmp = app.globalData.winner ^ app.globalData.owner
     if(tmp == 1){
       this.setData({
         result : 'The Second Player Win!'

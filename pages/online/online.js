@@ -64,7 +64,7 @@ Page({
     interval1: 0
   },
 
-  watch: {                                    //观察者：观察 thisTurnDone 变量（本回合是否结束）
+  watch: {                                    //观察者
     done: function(newValue,oldValue){
         if(newValue){                       //done为true，本回合结束
             this.data.done = false;                     //开启下一回合
@@ -524,6 +524,7 @@ Page({
   },
  //结束时获取对局信息
  get_info:function(){
+     console.log("get_info")
     var that = this
     wx.request({
         url: 'http://172.17.173.97:9000/api/game/' + app.globalData.uuid ,
@@ -535,29 +536,17 @@ Page({
         },
         success: res => {
             console.log(res)
-            app.globalData.winner = res.data.data.winner
-            wx.setStorageSync('winner', res.data.data.winner)
-            var info = res.data.data.last
-            console.log('拿到对方的操作为：' + info)
-            if (info.length != 0){
-                current_player = 1
-                tmp_ty = info[4]
-                tmp_num = info[5]
-                var op_ty = info[2]
-                console.log("拿到对方操作")
-                console.log(op_ty)
-                console.log(tmp_ty)
-                console.log(tmp_num)
-                if (info.length == 7)  tmp_num += info[6]
-                if (op_ty == '0')  that.take_from_outside()
-                else  that.take_from_inside(1)
+            if(res.data.code != 401){
+                app.globalData.winner = res.data.data.winner
+                wx.setStorageSync('winner', res.data.data.winner)
+                wx.navigateTo({
+                    url: '/pages/gameover/gameover',
+               })
             }
-        }
-    })
-    wx.navigateTo({
-        url: '/pages/gameover/gameover',
+         }
     })
  },
+
 
   //获取上步操作
   get_last: function(){
@@ -618,6 +607,7 @@ Page({
             }
         })
     },1000)
+    this.get_info()
     console.log('退出循环')
     //记录玩家1的操作
     current_player = 0;
@@ -629,7 +619,7 @@ Page({
     this.get_last()
   },
 
-  onHide: function(options){
-    clearInterval(this.data.interval)
+  onHide: function(options) {
+      clearInterval(this.data.interval)
   }
 }) 

@@ -34,6 +34,8 @@ Page({
             duration: 2000//持续的时间
           })
         }else{
+          app.globalData.owner = 0
+          wx.setStorageSync('owner', 0)
           wx.navigateTo({
             url: '/pages/online/online'
           })         
