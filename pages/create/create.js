@@ -26,7 +26,7 @@ joingame(){
         "Authorization": wx.getStorageSync('token')
       },
       data: {
-        private: true
+        private: false
       },
       success: res => {
         this.setData({

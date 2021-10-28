@@ -227,60 +227,178 @@ Page({
   //托管
   robot: function(){
     var that = this
-    console.log("机器人出牌")
-    var tmp = [that.data.player_1_spade, that.data.player_1_heart, that.data.player_1_club, that.data.player_1_diamond]
-    console.log('打印托管函数中的tmp数组：' + tmp)
-    console.log('黑桃：' + that.data.player_1_spade)
-    console.log('红心：' + that.data.player_1_heart)
-    console.log('梅花：' + that.data.player_1_club)
-    console.log('方块：' + that.data.player_1_diamond)
-    var maxi = -1, maxn = -1
-    for(var i = 0; i < 4; i ++){
-        if(tmp[i] > maxn){
-            maxn = tmp[i]
-            maxi = i
+    if(current_player == 1){
+        var tmp = [that.data.player_1_spade, that.data.player_1_heart, that.data.player_1_club, that.data.player_1_diamond]
+        console.log('打印托管函数中的tmp数组：' + tmp)
+        console.log('黑桃：' + that.data.player_1_spade)
+        console.log('红心：' + that.data.player_1_heart)
+        console.log('梅花：' + that.data.player_1_club)
+        console.log('方块：' + that.data.player_1_diamond)
+        var maxi = -1, maxn = 0
+        for(var i = 0; i < 4; i ++){
+            if(i == top_poke)
+                continue
+            if(tmp[i] > maxn){
+                maxn = tmp[i]
+                maxi = i
+            }
         }
-    }
-    console.log('maxn : ' + maxn)
-    if(maxn == 0)  that.take_from_outside();
-    else{
-        if(maxi == 0){
-            take_poke = 0
-            var t_player_1_spade = that.data.player_1_spade - 1
-            that.setData({
-                player_1_spade: t_player_1_spade
-            })
-            tmp_ty = 'S'
-            tmp_num = spade_1[t_player_1_spade]
-        }  
-        else if (maxi == 1){
-            take_poke = 1
-            var t_player_1_heart = that.data.player_1_heart - 1
-            that.setData({
-                player_1_heart: t_player_1_heart
-            })
-            tmp_ty = 'H'
-            tmp_num = heart_1[t_player_1_heart]
-        }
-        else if (maxi == 2){
-            take_poke = 2
-            var t_player_1_club = that.data.player_1_club - 1
-            that.setData({
-                player_1_club: t_player_1_club
-            })
-            tmp_ty = 'C'
-            tmp_num = club_1[t_player_1_club]
-        }
+        var tot1 = that.data.pool_tot + that.data.left_tot + that.data.player_1_spade + that.data.player_1_heart + that.data.player_1_club + that.data.player_1_diamond;
+        var tot2 =that.data.player_0_spade + that.data.player_0_heart + that.data.player_0_club + that.data.player_0_diamond;
+        console.log(tot1 + ' ' + tot2)
+        console.log('maxn : ' + maxn)
+        // var x = that.data.player_1_spade + that.data.player_1_heart + that.data.player_1_club + that.data.player_1_diamond
+        // var y = tot2
+        // console.log('tot1:' + tot1 + ' tot2:' + tot2 )
+        if(tot1 < tot2){
+            console.log('抽牌啦')
+            var tmp = cards[52 - this.data.left_tot]
+            console.log('tmppppppppp:' + tmp)
+            tmp_ty = tmp[0]
+            tmp_num = tmp[1]
+            console.log('机器人ty ' + tmp_ty)
+            console.log('机器人num ' + tmp_num)
+            if (tmp.length == 3)  tmp_num += tmp[2]
+            that.take_from_outside()
+        } 
         else{
-            take_poke = 3
-            var t_player_1_diamond = that.data.player_1_diamond - 1
-            that.setData({
-                player_1_diamond: t_player_1_diamond
-            })
-            tmp_ty = 'D'
-            tmp_num = diamond_1[t_player_1_diamond]
+            // var t = 2 * x + that.data.pool_tot
+            // var tt = y - x
+            // console.log('x:' + x + " y:" + y + '' +tt  + '' + t)
+            // if(x < y + 3 && tt < t && that.data.pool_tot + x < y){
+            //     if(top_poke == 0){
+            //         if(that.data.player_1_spade != 0){
+            //             take_poke = 0
+            //             var t_player_1_spade = that.data.player_1_spade - 1
+            //             that.setData({
+            //                 player_1_spade: t_player_1_spade
+            //             })
+            //             tmp_ty = 'S'
+            //             tmp_num = spade_1[t_player_1_spade]
+            //             that.take_from_inside(1)
+            //         }else{
+            //             var tmp = cards[52 - this.data.left_tot]
+            //             console.log('tmppppppppp:' + tmp)
+            //             tmp_ty = tmp[0]
+            //             tmp_num = tmp[1]
+            //             console.log('机器人ty ' + tmp_ty)
+            //             console.log('机器人num ' + tmp_num)
+            //             if (tmp.length == 3)  tmp_num += tmp[2]
+            //             that.take_from_outside()
+            //         }
+            //     }else if(top_poke == 1){
+            //         if(that.data.player_1_heart != 0){
+            //             take_poke = 1
+            //             var t_player_1_heart = that.data.player_1_heart - 1
+            //             that.setData({
+            //                 player_1_heart: t_player_1_heart
+            //             })
+            //             tmp_ty = 'H'
+            //             tmp_num = heart_1[t_player_1_heart]
+            //             that.take_from_inside(1)
+            //         }else{
+            //             var tmp = cards[52 - this.data.left_tot]
+            //             console.log('tmppppppppp:' + tmp)
+            //             tmp_ty = tmp[0]
+            //             tmp_num = tmp[1]
+            //             console.log('机器人ty ' + tmp_ty)
+            //             console.log('机器人num ' + tmp_num)
+            //             if (tmp.length == 3)  tmp_num += tmp[2]
+            //             that.take_from_outside()
+            //         }
+            //     }else if(top_poke == 2){
+            //         if(that.data.player_1_club != 0){
+            //             take_poke = 2
+            //             var t_player_1_club = that.data.player_1_club - 1
+            //             that.setData({
+            //                 player_1_club: t_player_1_club
+            //             })
+            //             tmp_ty = 'C'
+            //             tmp_num = club_1[t_player_1_club]
+            //             that.take_from_inside(1)
+            //         }else{
+            //             var tmp = cards[52 - this.data.left_tot]
+            //             console.log('tmppppppppp:' + tmp)
+            //             tmp_ty = tmp[0]
+            //             tmp_num = tmp[1]
+            //             console.log('机器人ty ' + tmp_ty)
+            //             console.log('机器人num ' + tmp_num)
+            //             if (tmp.length == 3)  tmp_num += tmp[2]
+            //             that.take_from_outside()
+            //         }
+            //     }else{
+            //         if(that.data.player_1_diamond != 0){
+            //             take_poke = 3
+            //             var t_player_1_diamond = that.data.player_1_diamond - 1
+            //             that.setData({
+            //                 player_1_diamond: t_player_1_diamond
+            //             })
+            //             tmp_ty = 'D'
+            //             tmp_num = diamond_1[t_player_1_diamond]
+            //             that.take_from_inside(1)
+            //         }else{
+            //             var tmp = cards[52 - this.data.left_tot]
+            //             console.log('tmppppppppp:' + tmp)
+            //             tmp_ty = tmp[0]
+            //             tmp_num = tmp[1]
+            //             console.log('机器人ty ' + tmp_ty)
+            //             console.log('机器人num ' + tmp_num)
+            //             if (tmp.length == 3)  tmp_num += tmp[2]
+            //             that.take_from_outside()
+            //         }
+            //     }
+            // }else{
+                if(maxn == 0 || tot1 < tot2){
+                    var tmp = cards[52 - this.data.left_tot]
+                    console.log('tmppppppppp:' + tmp)
+                    tmp_ty = tmp[0]
+                    tmp_num = tmp[1]
+                    console.log('机器人ty ' + tmp_ty)
+                    console.log('机器人num ' + tmp_num)
+                    if (tmp.length == 3)  tmp_num += tmp[2]
+                    that.take_from_outside();
+                }  
+                else{
+                    if(maxi == 0){
+                        take_poke = 0
+                        var t_player_1_spade = that.data.player_1_spade - 1
+                        that.setData({
+                            player_1_spade: t_player_1_spade
+                        })
+                        tmp_ty = 'S'
+                        tmp_num = spade_1[t_player_1_spade]
+                    }  
+                    else if (maxi == 1){
+                        take_poke = 1
+                        var t_player_1_heart = that.data.player_1_heart - 1
+                        that.setData({
+                            player_1_heart: t_player_1_heart
+                        })
+                        tmp_ty = 'H'
+                        tmp_num = heart_1[t_player_1_heart]
+                    }
+                    else if (maxi == 2){
+                        take_poke = 2
+                        var t_player_1_club = that.data.player_1_club - 1
+                        that.setData({
+                            player_1_club: t_player_1_club
+                        })
+                        tmp_ty = 'C'
+                        tmp_num = club_1[t_player_1_club]
+                    }
+                    else{
+                        take_poke = 3
+                        var t_player_1_diamond = that.data.player_1_diamond - 1
+                        that.setData({
+                            player_1_diamond: t_player_1_diamond
+                        })
+                        tmp_ty = 'D'
+                        tmp_num = diamond_1[t_player_1_diamond]
+                    }
+                    that.take_from_inside(1)
+                }
+         //   }
         }
-        that.take_from_inside(1)
     }
   },
 
@@ -316,9 +434,9 @@ Page({
                 ch_current_player: '二'
             })
             
-            setTimeout(function() {
+           // setTimeout(function() {
                 that.robot()
-             }, 2000);
+             //}, 2000);
             
         }  
     }
@@ -392,16 +510,6 @@ Page({
     }
   },
 
-  //玩家的点击卡组事件
-  get_poke(){
-    console.log('玩家点击卡组' + current_player)
-    var tmp = cards[52 - this.data.left_tot]
-    console.log('tmppppppppp:' + tmp)
-    tmp_ty = tmp[0]
-    tmp_num = tmp[1]
-    if (tmp.length == 3)  tmp_num += tmp[2]
-    this.take_from_outside(tmp_ty, tmp_num)
-  },
 
     //玩家的点击卡组事件
   get_poke(){
@@ -412,7 +520,7 @@ Page({
         tmp_ty = tmp[0]
         tmp_num = tmp[1]
         if (tmp.length == 3)  tmp_num += tmp[2]
-        this.take_from_outside(tmp_ty, tmp_num)
+        this.take_from_outside()
     }
   },
 

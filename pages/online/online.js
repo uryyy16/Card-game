@@ -190,14 +190,16 @@ Page({
             console.log("333333333")
             console.log(res)
             var info = res.data.data.last_code
-            console.log('info:' + info)
-            tmp_ty = info[4]
-            tmp_num = info[5]
-            if (info.length == 7)  tmp_num += info[6]
-            console.log("tell 0")
-            console.log("tmp_ty" + tmp_ty)
-            console.log("tmp_num" + tmp_num)
-            this.take_from_outside()
+            if(info.length > 0){
+                console.log('info:' + info)
+                tmp_ty = info[4]
+                tmp_num = info[5]
+                if (info.length == 7)  tmp_num += info[6]
+                console.log("tell 0")
+                console.log("tmp_ty" + tmp_ty)
+                console.log("tmp_num" + tmp_num)
+                this.take_from_outside()
+            }
         }
     })
   },
@@ -366,8 +368,11 @@ Page({
                     maxi = i
                 }
             }
+            var tot1 = that.data.pool_tot + that.data.left_tot + that.data.player_0_spade + that.data.player_0_heart + that.data.player_0_club + that.data.player_0_diamond;
+            var tot2 =that.data.player_1_spade + that.data.player_1_heart + that.data.player_1_club + that.data.player_1_diamond;
+            console.log(tot1 + ' ' + tot2)
             console.log('maxn : ' + maxn)
-            if(maxn == 0)  that.tell_0();
+            if(maxn == 0 || tot1 < tot2)  that.tell_0();
             else{
                 if(maxi == 0){
                     take_poke = 0
